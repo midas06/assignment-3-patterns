@@ -1,0 +1,14 @@
+Identification
+
+Pattern used: Facade
+
+Location of code: Processor
+	
+The Processor class provides a unified interface to a set of interfaces in the system - the simple, default view of the subsystem that is good enough for most clients - and also provides layering and separation of subsystems. 
+
+
+
+
+
+The Processor class knows which subsystem classes are responsible for a request, and delegates client requests to appropriate subsystem objects.
+

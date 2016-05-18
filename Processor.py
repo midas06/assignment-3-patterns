@@ -23,6 +23,7 @@ class Processor(object):
         self.database.add_people(self.validator.export_good_data())
 
     def process_bad(self):
+
         if self.validator.has_bad_data():
             self.editor.set_raw(self.validator.export_bad_data())
             self.editor.edit()
