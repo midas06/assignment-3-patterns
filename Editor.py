@@ -12,11 +12,20 @@ class Editor(object):
     def set_raw(self, new_data):
         self._raw_data = new_data
 
+    # def edit(self):
+    #     while len(self._raw_data) > 0:
+    #         s = self._raw_data[0]
+    #         (print("Bad data: \n" + s))
+    #         self.edit_or_delete(s)
+    #     print ("All bad data has been handled")
+
     def edit(self):
         while len(self._raw_data) > 0:
-            s = self._raw_data[0]
-            (print("Bad data: \n" + s))
-            self.edit_or_delete(s)
+            bad_obj = self._raw_data[0]
+            the_state = bad_obj.get_state()
+            print("The following data is invalid: \n" + IncompleteData.to_string(the_state.get_data()))
+            print("\nThe current data is:\n" + the_state.get_current_state())
+            self.edit_or_delete(bad_obj)
         print ("All bad data has been handled")
 
     def edit_or_delete(self, a_string):

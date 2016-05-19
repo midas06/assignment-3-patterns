@@ -20,6 +20,7 @@ class Processor(object):
         self.filer.strip_tags()
         self.validator.set_raw_data(self.filer.export())
         self.validator.parse_data()
+        self.validator.separate_data()
         self.database.add_people(self.validator.export_good_data())
 
     def process_bad(self):
@@ -56,3 +57,18 @@ class Processor(object):
 
     def bar_bmi_vs_gender(self):
         self.plotter.bar_bmi_vs_gender(self.database.get_male_bmi(),self.database.get_female_bmi() )
+
+
+
+p = Processor()
+
+p.filer.set_filepath("test.txt")
+p.filer.load_file()
+
+p.validator.set_raw_data(p.filer.export())
+
+p.validator.parse_data()
+p.validator.separate_data()
+
+p.editor.set_raw(p.validator.export_bad_data())
+p.editor.edit()

@@ -1,6 +1,18 @@
+from DataState import *
+
+
 class Person(object):
 
-    def __init__(self, new_id, new_gender, new_age, new_sales, new_bmi, new_income):
+    def __init__(self):
+        self._id = None
+        self._gender = None
+        self._age = None
+        self._sales = None
+        self._bmi = None
+        self._income = None
+        self._state = DataState()
+
+    def set_all(self, new_id, new_gender, new_age, new_sales, new_bmi, new_income):
         self._id = new_id
         self._gender = new_gender
         self._age = new_age
@@ -26,6 +38,9 @@ class Person(object):
     def get_income(self):
         return self._income
 
+    def get_state(self):
+        return self._state
+
     def set_id(self, new_id):
         self._id = new_id
 
@@ -44,3 +59,8 @@ class Person(object):
     def set_bmi(self, new_bmi):
         self._bmi = new_bmi
 
+    def set_state(self, new_state):
+        self._state = new_state
+
+    def is_complete(self):
+        return type(self._state) is DataComplete
