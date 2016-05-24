@@ -4,12 +4,12 @@ from DataState import *
 class Person(object):
 
     def __init__(self):
-        self._id = None
-        self._gender = None
-        self._age = None
-        self._sales = None
-        self._bmi = None
-        self._income = None
+        self._id = ""
+        self._gender = ""
+        self._age = ""
+        self._sales = ""
+        self._bmi = ""
+        self._income = ""
         self._state = DataState()
 
     def set_all(self, new_id, new_gender, new_age, new_sales, new_bmi, new_income):

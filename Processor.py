@@ -60,15 +60,15 @@ class Processor(object):
 
 
 
-p = Processor()
-
-p.filer.set_filepath("test.txt")
-p.filer.load_file()
-
-p.validator.set_raw_data(p.filer.export())
-
-p.validator.parse_data()
-p.validator.separate_data()
-
-p.editor.set_raw(p.validator.export_bad_data())
-p.editor.edit()
+# p = Processor()
+#
+# p.filer.set_filepath("test.txt")
+# p.filer.load_file()
+#
+# p.validator.set_raw_data(p.filer.export())
+#
+# p.validator.parse_data()
+# p.validator.separate_data()
+#
+# p.editor.set_raw(p.validator.export_bad_data())
+# p.editor.edit()
